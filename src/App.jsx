@@ -20,11 +20,11 @@ function App() {
 
   const handleEnterColor = (event) => {
     event.preventDefault();
-    setColor("green");
+    setColor("#3b971e");
   };
   const handleExitColor = (event) => {
     event.preventDefault();
-    setColor("orange");
+    setColor("#fc8619");
   };
 
   return (
@@ -44,6 +44,7 @@ function App() {
         <p>y:{position.y}</p>
 
         <div
+          onClick={() => setColor("#696565")}
           onMouseEnter={handleEnterColor}
           onMouseLeave={handleExitColor}
           style={{
@@ -51,8 +52,13 @@ function App() {
             height: "450px",
             backgroundColor: `${color}`,
             margin: "0 auto",
+            display: "flex",
+            justifyContent: "center",
+            alignContent: "center",
           }}
-        ></div>
+        >
+          <h1>color: {color}</h1>
+        </div>
         {isOpen && (
           <div
             style={{
@@ -98,7 +104,7 @@ function App() {
               Marron
             </button>{" "}
             <button
-              onClick={() => setColor("#696565")}
+              onClick={() => setColor("#000")}
               style={{
                 backgroundColor: "#696565",
                 color: "white",
